@@ -4,7 +4,7 @@ import React from 'react'
 const MapScreen = () => {
   return (
     <SafeAreaView>
-      <Text>MapScreen</Text>
+      <Text className="text-red-800">MapScreen</Text>
     </SafeAreaView>
   )
 }
