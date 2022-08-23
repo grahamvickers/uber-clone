@@ -1,13 +1,12 @@
-import { TailwindProvider } from 'tailwindcss-react-native';
 import { Provider } from 'react-redux';
 import HomeScreen from './screens/HomeScreen';
 import MapScreen from './screens/MapScreen';
 import { store } from './store';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
+import { TailwindProvider } from 'tailwindcss-react-native';
 
 
 export default function App() {
