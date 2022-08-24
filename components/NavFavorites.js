@@ -3,6 +3,7 @@ import React from 'react'
 import { Icon } from 'react-native-elements'
 import tw from 'tailwind-react-native-classnames'
 
+// set demo data of a users favorite locations
 const data = [
     {
         id: "123", 
@@ -20,6 +21,7 @@ const data = [
 
 const NavFavorites = () => {
   return (
+    // returns the data dynamically on the home and destination screens
     <FlatList  
         data={data}
         keyExtractor={(item) => item.id}

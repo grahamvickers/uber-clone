@@ -29,6 +29,12 @@ const NavigateCard = () => {
 
   return (
     <SafeAreaView style={tw`bg-white flex-1`}>
+        <TouchableOpacity 
+            onPress={() => navigation.navigate("HomeScreen")}
+            style={tw`absolute top-3 left-5 p-3 z-50 rounded-full`}
+        >
+            <Icon name="chevron-left" type="fontawesome" />
+        </TouchableOpacity>  
       <Text style={tw`text-center py-5 text-xl`}>Good {timeOfDay}, Graham!</Text>
       <View style={tw`border-t border-gray-200 flex-shrink`}>
         <View>
@@ -61,8 +67,10 @@ const NavigateCard = () => {
         {/* add in the favorite locations for the rider */}
         <NavFavorites/>
       </View>
-
-      <View style={tw`flex-row bg-white justify-evenly py-2 mt-auto border-t border-gray-100`}>
+    
+        {/* this shows the user a choice between now selecting a ride from this location or food to here */}
+      <View style={tw`flex-row bg-white justify-evenly py-2 pb-7 mt-auto border-t border-gray-100`}>
+        {/* ride */}
         <TouchableOpacity 
             onPress={() => navigation.navigate("RideOptionsCard")}
             style={tw`flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full`}
@@ -70,12 +78,14 @@ const NavigateCard = () => {
             <Icon name="car" type="font-awesome" color="white" size={16} />
             <Text style={tw`text-white text-center`}>Rides</Text>
         </TouchableOpacity>
-
+        
+        {/* eats */}
         <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
             <Icon name="fast-food-outline" type="ionicon" color="black" size={16} />
             <Text style={tw`text-center`}>Eats</Text>
         </TouchableOpacity>
       </View>
+
     </SafeAreaView>
   );
 };
