@@ -15,6 +15,7 @@ const HomeScreen = () => {
     return (
         <SafeAreaView style={tw`bg-white h-full`}>
             <View style={tw`p-5`}>
+                {/* header logo */}
                 <Image 
                     style={{
                         width: 100,
@@ -26,6 +27,7 @@ const HomeScreen = () => {
                     }}
                 />
 
+                {/* this is the input field on the home screen that sets the pick up location */}
                 <GooglePlacesAutocomplete 
                     placeholder='Where From?'
                     styles={{
@@ -36,6 +38,7 @@ const HomeScreen = () => {
                             fontSize: 18
                         }
                     }}
+                    // set the data of the selected location on press
                     onPress={(data, details = null) => {
                         dispatch(setOrigin({
                             location: details.geometry.location,
@@ -58,8 +61,10 @@ const HomeScreen = () => {
                     debounce={400}
                 />
 
+                {/* add in the choice between uber ride or uber eats */}
                 <NavOptions />
-
+                
+                {/* shows a demo of the users favorite locations */}
                 <NavFavorites />
             </View>
         </SafeAreaView>

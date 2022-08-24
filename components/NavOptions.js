@@ -6,6 +6,7 @@ import tw from 'tailwind-react-native-classnames';
 import { useSelector } from 'react-redux';
 import { selectOrigin } from '../slices/navSlice';
 
+// set data for choice of ride or food
 const data = [
     {
         id: "123",
@@ -27,6 +28,7 @@ const NavOptions = () => {
 
   return (
     <View>
+        {/* create dynamic content of service options on the home screen*/}
         <FlatList 
             data={data}
             horizontal
